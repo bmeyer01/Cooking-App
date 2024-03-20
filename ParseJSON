@@ -1,0 +1,27 @@
+import 'dart:convert';
+import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
+import '/flutter_flow/uploaded_file.dart';
+import '/flutter_flow/custom_functions.dart';
+
+dynamic parseJSON(String stringJSON) {
+  /// MODIFY CODE ONLY BELOW THIS LINE
+
+  // Remove non-printable and other non-valid JSON characters
+  try {
+    // Remove non-printable and other non-valid JSON characters
+    stringJSON = stringJSON.replaceAll(RegExp(r'[\x00-\x1F\x7F-\x9F]'), '');
+    return json.decode(stringJSON);
+  } catch (e) {
+    print('Error parsing JSON: $e');
+    return null;
+  }
+
+  /// MODIFY CODE ONLY ABOVE THIS LINE
+}
